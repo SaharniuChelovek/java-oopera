@@ -1,2 +1,9 @@
-package Personality;public enum Gender {
+package Personality;
+
+public enum Gender {
+    MALE,
+    FEMALE
+
+
+
 }
