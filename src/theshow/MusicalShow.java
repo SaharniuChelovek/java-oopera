@@ -1,10 +1,8 @@
-package TheShow;
+package theshow;
 
 
-import Personality.Director;
-import Personality.Person;
-
-
+import personality.Director;
+import personality.Person;
 
 public class MusicalShow extends Show {
     protected Person musicAuthor;
@@ -20,8 +18,8 @@ public class MusicalShow extends Show {
         return musicAuthor;
     }
 
-    public String getLibrettoText() {
-        return librettoText;
+    public void getLibrettoText() {
+        System.out.println(librettoText);
     }
 
     @Override

@@ -1,10 +1,8 @@
-package TheShow;
+package theshow;
 
 
-import Personality.Director;
-import Personality.Person;
-
-
+import personality.Director;
+import personality.Person;
 
 public class Ballet extends MusicalShow {
     private Person choreographer;

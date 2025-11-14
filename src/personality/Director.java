@@ -1,4 +1,7 @@
-package Personality;
+package personality;
+
+
+import java.util.Objects;
 
 public class Director extends Person {
     private int numberOfShows;
@@ -20,5 +23,19 @@ public class Director extends Person {
                 ", gender=" + gender +
                 ", numberOfShows=" + numberOfShows +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Director director = (Director) o;
+        return numberOfShows == director.numberOfShows;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), numberOfShows);
     }
 }

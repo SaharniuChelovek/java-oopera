@@ -1,8 +1,8 @@
-package TheShow;
+package theshow;
 
-import Personality.Actor;
-import Personality.Director;
-import Personality.Person;
+
+import personality.Actor;
+import personality.Director;
 
 import java.util.ArrayList;
 
@@ -46,10 +46,15 @@ public class Show {
         }
     }
 
-    public void removeActor(Actor hActor) {
-        if (listOfActor.contains(hActor)) {
-            listOfActor.remove(hActor);
-            System.out.println("Актер удален из списка.");
+    public void changeActor(Actor oldActor, Actor newActor) {
+        if (listOfActor.contains(oldActor)) {
+            if (listOfActor.contains(newActor)) {
+                System.out.println("Такой актер уже есть в списке.");
+            } else {
+                int index = returnIndex(oldActor);
+                listOfActor.set(index, newActor);
+                System.out.println("замена актера произведена успешно.");
+            }
         } else {
             System.out.println("Такого актера в списке нет.");
         }
@@ -60,6 +65,12 @@ public class Show {
         for (Actor iActor : listOfActor) {
             System.out.println(iActor);
         }
+    }
+
+    public int returnIndex(Actor actor) {
+        int index = listOfActor.indexOf(actor);
+        return index;
+
     }
 
     @Override
