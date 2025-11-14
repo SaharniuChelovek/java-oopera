@@ -3,7 +3,6 @@ package theshow;
 
 import personality.Actor;
 import personality.Director;
-
 import java.util.ArrayList;
 
 public class Show {
