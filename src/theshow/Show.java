@@ -37,25 +37,33 @@ public class Show {
     public void addActor(Actor actor) {
         if (listOfActor.contains(actor)) {
             System.out.println("Такой актер уже есть в списке");
-
         } else {
-
             listOfActor.add(actor);
             System.out.println("Актер успешно добавлен в список.");
         }
     }
 
-    public void changeActor(Actor oldActor, Actor newActor) {
-        if (listOfActor.contains(oldActor)) {
-            if (listOfActor.contains(newActor)) {
-                System.out.println("Такой актер уже есть в списке.");
-            } else {
-                int index = returnIndex(oldActor);
-                listOfActor.set(index, newActor);
-                System.out.println("замена актера произведена успешно.");
+    public void changeActor(Actor newActor, String oldLastname) {
+        int index = -1;
+        int count = 0;
+        for (int i = 0; i < listOfActor.size(); i++) {
+            Actor actor = listOfActor.get(i);
+            if (actor.getLastName().equals(oldLastname)) {
+                index = i;
+                count +=1;
             }
-        } else {
-            System.out.println("Такого актера в списке нет.");
+        }
+        switch (count) {
+            case 0:
+                System.out.println("Ошибка: актер с данной фамилией не найден.");
+                break;
+            case 1:
+                listOfActor.set(index, newActor);
+                System.out.println("Замена актера произведена успешно.");
+                break;
+            default:
+                System.out.println("Ошибка: в списке несколько актеров с заданной фамилией.");
+                break;
         }
     }
 
@@ -66,11 +74,7 @@ public class Show {
         }
     }
 
-    public int returnIndex(Actor actor) {
-        int index = listOfActor.indexOf(actor);
-        return index;
 
-    }
 
     @Override
     public String toString() {

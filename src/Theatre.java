@@ -26,15 +26,13 @@ public class Theatre {
         ballet.addActor(actor1);
         ballet.printListOfActors();
         drama.printListOfActors();
-        drama.changeActor(actor2, actor1);
+        drama.changeActor(actor1, actor2.getLastName());
         drama.printListOfActors();
         greatestShow.printListOfActors();
-        greatestShow.changeActor(actor1, actor2);
+        greatestShow.changeActor(actor2, actor1.getLastName());
         greatestShow.printListOfActors();
         drama.getLibrettoText();
         ballet.getLibrettoText();
-
-
     }
 }
 
